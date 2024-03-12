@@ -10,6 +10,8 @@ public class MyConnection {
         private String login="root";
 
         private String pwd="";
+
+        private static MyConnection instance;
         Connection cnx;
 
         public MyConnection(){
@@ -23,5 +25,12 @@ public class MyConnection {
 
     public Connection getCnx() {
         return cnx;
+    }
+
+    public static MyConnection getInstance(){
+            if(instance == null){
+                instance = new MyConnection();
+            }
+            return instance;
     }
 }

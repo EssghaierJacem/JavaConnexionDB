@@ -20,7 +20,7 @@ public class UserServices implements IService<User> {
         String requete="INSERT INTO user(nom, prenom) " +
                         "VALUES ('"+user.getNom()+"','"+user.getPrenom()+"')";
         try {
-            Statement st = new MyConnection().getCnx().createStatement();
+            Statement st = MyConnection.getInstance().getCnx().createStatement();
             st.executeUpdate(requete);
             System.out.println("Personne ajouté!");
         } catch (SQLException e) {
@@ -33,7 +33,7 @@ public class UserServices implements IService<User> {
         String requete="INSERT INTO user(nom, prenom) " +
                 "VALUES (?, ?)";
         try {
-            PreparedStatement pst = new MyConnection().getCnx().prepareStatement(requete);
+            PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(requete);
             pst.setString(1,user.getNom());
             pst.setString(2,user.getPrenom());
             pst.executeUpdate();
@@ -58,7 +58,7 @@ public class UserServices implements IService<User> {
         List<User> data = new ArrayList<>();
         String requete="SELECT * FROM user";
         try {
-            Statement st = new MyConnection().getCnx().createStatement();
+            Statement st = MyConnection.getInstance().getCnx().createStatement();
             ResultSet rs =  st.executeQuery(requete);
             while(rs.next()){
                 User u = new User();

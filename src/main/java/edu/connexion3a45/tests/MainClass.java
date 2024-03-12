@@ -23,5 +23,11 @@ public class MainClass {
             //Show All Data
 
         System.out.println(us.allData());
+
+            //Test de Singleton
+
+        MyConnection Mc1 = MyConnection.getInstance();
+        MyConnection Mc2 = MyConnection.getInstance();
+        System.out.println(Mc1.hashCode()+" - "+Mc2.hashCode());
     }
 }
