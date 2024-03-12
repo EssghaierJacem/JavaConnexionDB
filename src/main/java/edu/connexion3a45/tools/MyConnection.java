@@ -17,7 +17,7 @@ public class MyConnection {
         public MyConnection(){
             try {
                 cnx = DriverManager.getConnection(url,login,pwd);
-                System.out.println("Connexion établie...");
+                System.out.println("Connexion établie..");
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }

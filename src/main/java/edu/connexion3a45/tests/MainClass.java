@@ -10,21 +10,21 @@ public class MainClass {
 
        // MyConnection mc = new MyConnection();
 
-            //User Add : Statement
+            // User Add : Statement
 
         User user1 = new User("Jacem", "Sghaier");
         UserServices us = new UserServices();
         us.addUser(user1);
 
-            //User Add  : Prepared Statement
+            // User Add  : Prepared Statement
 
         us.addUser2(user1);
 
-            //Show All Data
+            // Show All Data
 
         System.out.println(us.allData());
 
-            //Test de Singleton
+            // Test de Singleton
 
         MyConnection Mc1 = MyConnection.getInstance();
         MyConnection Mc2 = MyConnection.getInstance();
